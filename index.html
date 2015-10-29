@@ -175,11 +175,22 @@ function anim()
 	}
 
 function move(evt)
+{
+	evt = evt || event;
+	cursor_x = evt.pageX-canvas_x;
+	cursor_y = evt.pageY-canvas_y;
+	
+	mouse_x = cursor_x - x;
+	mouse_y = cursor_y - y;
+	
+	if (mouse_x < 0)
 	{
-	evt=evt||event;
-	cursor_x=evt.pageX-canvas_x;
-	cursor_y=evt.pageY-canvas_y;
+		var angle = Math.atan(mouse_y / mouse_x);
+		angle *= 10;
+	
+		$("#slon").css('transform','rotate(' + angle + 'deg)');
 	}
+}
 
 function key_manager(evt)
 	{
