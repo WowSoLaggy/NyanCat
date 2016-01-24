@@ -19,29 +19,6 @@
 </script>
 <script type="text/javascript">
   startVolume = 50;
-  soundManager.debugMode = true;
-  
-  soundManager.setup({
-      url: 'swf/',
-      debugMode: true,
-      useHTML5Audio: true,
-      flashVersion: 9,
-      useFlashBlock: false,
-      onready: function() {
-          var mySound = soundManager.createSound({
-              id: 'slonique',
-              url: './music/slonique.mp3',
-              autoLoad: true,
-              autoPlay: true,
-              loops: 9999999,
-              onload: function() {
-              },
-              onfinish: function() {
-              },
-              volume: startVolume
-          });
-
-      }
 });
 </script>
 <script type="text/javascript">
@@ -282,7 +259,7 @@ $(document).ready( function(){
 </head>
 <body onload="start()" onresize="resize()" onorientationchange="resize()" >
     <img id="img" src="./sound.png" ></img>
-    <audio controls autoplay id="player" loop >
+    <audio autoplay id="player" loop >
         <source src="music.mp3" />
     </audio>
 <canvas id="starfield" style=" background-repeat:no-repeat;background-position:center; background-size: 100%;"></canvas>
